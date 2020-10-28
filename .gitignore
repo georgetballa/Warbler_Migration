@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# User Edited
+pickles/
+webmaps/
+data/maps/basemap-1.2.2rel
+graphs/
+
