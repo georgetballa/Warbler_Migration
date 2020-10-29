@@ -25,12 +25,15 @@ ____________________
 
 Plotted Coordinates Each Day Over a Year
 
+![Warbler Observations 2020](./graphs/5_years_migrations.jpg)
+
 
 Fit Regression Line to Each Day
 ![Warbler Observations 2020](./graphs/warbler_plots/spring_migrations_fit.jpg)
-Plotted on Map
 
-Made GIFs
+
+
+
 
 Saw clear movement latitudally
 
@@ -44,10 +47,6 @@ Plot Regression for each year
 Plot all years as one set
 Plot Regression
 Predict Future Dates
-
-
-ttest
-clt
 
 
 
