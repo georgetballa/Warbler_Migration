@@ -9,11 +9,10 @@ Every Year, warblers migrate from their winter homes in South America to their s
 My goal is to look at the migration patterns from 2013 to 2020 to determine if 2020 was a typical year for warbler spring migration.
 
 
-## Getting the Data
+## Ebird Data
+
 
 [Ebird Api Documentation](https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest)
-
-
 
 The ebird API supports a handful of requests for recent observation data. Since I was interested in historical data, I was limited to the historic API request. This took in a region code as well as a date. In order to get data from past observations over long periods of time, it was neccessary to write a function to pull each day from a given year. The data pulls came in at about one day every 30 seconds. 
 
@@ -51,9 +50,9 @@ This visualization confirms the theory that observations of warblers increase in
 
 **What does the yearly migration pattern look like?**
 
-Plotting the average warbler observation latitude across every day of the year shows a well defined pattern across all years. Each point represents the average latitude of warbler observations on a given day of a given year.
+Plotting the average warbler latitude across every day shows a well defined pattern across all years. Each point represents the average latitude of warbler observations on a given day of a given year.
 
-[![5 Years of Warbler Migration](./graphs/warbler_plots/5_years_migrations.jpg)](./graphs/5_years_migrations.jpg)
+[![5 Years of Warbler Migration](./graphs/5_years_boxed.jpg)]
 
 
 
