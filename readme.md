@@ -2,13 +2,13 @@
 
 ![Dataframe Example](./images/warbler.gif)
 
-Why warblers?
+**Why warblers?**
 
 Warbler's are sensitive to changes in climate, and have well studied migration patterns. Looking at changes in these patterns can be an indicator for climate change.
 
-Every Year, warblers migrate from their winter homes in South America to their summer homes in Canada. 
+Every year, warblers migrate from their winter homes in South America to their summer homes in Canada. 
 
-My goal is to look at the migration patterns from 2013 to 2020 to determine if 2020 was a typical year for warbler spring migration.
+The goal is to look at the migration patterns from 2013 to 2020 to determine if 2020 was a typical year for warbler spring migration.
 ___________
 
 ## Ebird Data
@@ -134,7 +134,7 @@ The reported P-Value was 0.0. Graphing to two mean distributions shows that both
 * This test told me that it is not unusal for the mean on any given day to be different from the average latitude. 
 
 _____________________
-## Furture Exploration
+## Future Exploration
 
 
 
