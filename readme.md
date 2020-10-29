@@ -28,7 +28,7 @@ https://api.ebird.org/v2/data/obs/{{regionCode}}/historic/{{y}}/{{m}}/{{d}}
 
 * Data was collected from daily observations into yearly datasets. Some pull requests failed during this process. A function ran through each day and appended it to a CSV. A list of missing days was provided to put back through the API request. 
 
-* Duplicate observations also needed to be removed. Some observations were duplicated many times.
+* Duplicate observations needed to be removed to ensure independent data.
 
 * A string search was performed to get a dataset of all warbler observations.
 
