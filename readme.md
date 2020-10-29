@@ -31,19 +31,17 @@ https://api.ebird.org/v2/data/obs/{{regionCode}}/historic/{{y}}/{{m}}/{{d}}
 * Duplicate observations needed to be removed to ensure independent data.
 
 * A string search was performed to get a dataset of all warbler observations.
-
+__________________
 ## Number of Warbler Observations Against Total Observations
 
 * Is there enough data on warblers?
 
-**A significant percentage of observations are of warblers**
-
 ![2017 Warblers Vs. Total](./graphs/monthly_distribution/2017_warbler_observations.jpg)
 ![2017 Warblers Vs. Total](./graphs/monthly_distribution/2018_warbler_observations.jpg)
 
-After filtering I ended up with an average of 12,200 warbler observations per year.
+After filtering I ended up with an average of 12,200 warbler observations per year. This provides me with enough to look at all warblers, but looking at individual species of warbler provide too small of a sample size.
 
->Sample of 2019 Warbler Observation Data
+### Sample of 2019 Warbler Observation Data
 
 ![Dataframe Example](./images/obs_df)
 ____________________
@@ -135,7 +133,7 @@ The reported P-Value was 0.0. Graphing to two mean distributions shows that both
 
 * This test told me that it is not unusal for the mean on any given day to be different from the average latitude. 
 
-
+_____________________
 ## Furture Exploration
 
 
