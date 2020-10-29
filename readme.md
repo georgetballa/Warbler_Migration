@@ -1,5 +1,7 @@
 # Warbler Migration
 
+![Dataframe Example](./images/warbler.gif)
+
 Why warblers?
 
 Warbler's are sensitive to changes in climate, and have well studied migration patterns. They have very predictable migration patterns. Looking at changes in these patterns can be an indicator for climate change.
@@ -14,19 +16,26 @@ ___________
 
 [Ebird Api Documentation](https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest)
 
-The ebird API supports a handful of requests for recent observation data. Since I was interested in historical data, I was limited to the historic API request. This took in a region code as well as a date. In order to get data from past observations over long periods of time, it was neccessary to write a function to pull each day from a given year. The data pulls came in at about one day every 30 seconds. 
+* The ebird API supports a handful of requests for recent observation data. The plan is to look at historical data, which limited options to the historic API request. 
+
+* This took in a region code and a date. In order to get data from past observations over long periods of time, it was neccessary to write a function to pull each day from a given year. 
+
+* The data pulls came in at about one day every 30 seconds, taking just over 24 hours. 
 
 ```
 https://api.ebird.org/v2/data/obs/{{regionCode}}/historic/{{y}}/{{m}}/{{d}}
 ```
 
-Data was collected from daily observations into yearly datasets. Some pull requests failed during this process. A function ran through each day and appended it to a CSV. A list of missing days was provided to put back through the API request. 
+* Data was collected from daily observations into yearly datasets. Some pull requests failed during this process. A function ran through each day and appended it to a CSV. A list of missing days was provided to put back through the API request. 
 
-Duplicate observations also needed to be removed. Some observations were duplicated many times.
+* Duplicate observations also needed to be removed. Some observations were duplicated many times.
 
-A search was performed on the common names column to filter out any birds that were not warblers.
+* A string search was performed to get a dataset of all warbler observations.
 
 ## Number of Warbler Observations Against Total Observations
+
+* Is there enough data on warblers?
+
 **A significant percentage of observations are of warblers**
 
 ![2017 Warblers Vs. Total](./graphs/monthly_distribution/2017_warbler_observations.jpg)
@@ -45,7 +54,7 @@ ____________________
 
 **Testing Assumption: Observations of warblers correlate with migration**
 
-Sightings of warblers are expected to move further north as the warblers move towards their home in Canada. Plotting every observation on each day based on latitude and longitude assisted in visualizing the migration. Linear regression was used to plot a latitude line across the US for each day. I then compiled those images into a GIF to confirm my assumption.
+The expectation is that observations are recorded further north as the warblers move towards their home in Canada. Plotting every observation on each day based on latitude and longitude assisted in visualizing the migration. Linear regression was used to plot a line across the US for each day predicting where warblers would be on that given day. I then animated the full year to confirm my assumption.
 
 This was done for each year, with each year showing similar patterns.
 
@@ -81,41 +90,61 @@ __________________
 
 **Some of these days look like they are far from the regression line. I wwanted to test how many days of each year had a latitude that was equal to the mean latitude across all years.**
 
-To accomplish this I started by look at one observations of one single day in 2020. April-8 had a point that looked far from the mean latitude.
+### H0: The mean latitude on a given day (Apr-8 2020) is equal to the mean latitude of all observations that day from 2014 to 2020.
 
-Bootstrapping 10,000 samples (each of length 50) from April-8 2020 and taking the means of those allowed me to plot a normal distribution of means.
+### Ha: The mean latitude on that given day is not equal to the mean over years 2013-2020.
 
-Doing the same thing on the samples of all observations from 2013 to 2020 gave me a normal distribution of the mean latitude on April-8 2020 for all years.
+* April-8 had a point that looked far from the mean latitude. 
 
-I was then able to create a 95% confidence interval for each as well as plot a normal distribution curve to the sampled means.
+* A normal test using scipy stats confirmed that the latitude distribution on April 8th was not a normal distribution so sampling would be needed.
+
+* Bootstrapping 10,000 samples (each of length 50) from April-8 2020 and taking the means of those allowed me to plot a normal distribution of means and calculate the probable means with 95% confidence.
+
+![2020 Sampled Means](./graphs/warbler_plots//CLT_2020_8-Apr.jpg)
+
+* Doing the same thing on the samples of all observations from 2013 to 2020 provided a normal distribution of the mean latitude on April-8 2020.
+
+![2020 Sampled Means](./graphs/warbler_plots//CLT_all_years_8-Apr.jpg)
 
 Using the Welch's T-test with the assumption of non-equal variances I was able to determine that the mean latitude on April-8 2020 was not equal to the mean latitude over all years. 
 
-The reported P-Value was 0.0 and this visualization shows that both distributions do not overlap, confirming the test results.
+>Ttest_indResult(statistic=536.5253279869985, pvalue=0.0)
+
+The reported P-Value was 0.0. Graphing to two mean distributions shows that both distributions do not overlap, confirming the test results.
+
+![2020 VS All Years Mean Distributions](./graphs/warbler_plots//CLT_overlay.jpg)
+
 
 **This raised the question how many days in each year were latitudes not equal to the mean?**
 
-Automating the test above allowed me to run a T-test for every day of every year from 2014 to 2020 and append the P-Values to a list. The alpha value used to reject the null hypothesis was 0.05. Filtering the list for P-Values under 0.05 and summing those numbers of days over total days observed in that year answered the above question.
+* Automating the test above allowed me to run a T-test for every day of every year from 2014 to 2020 and append the P-Values to a list. 
 
-* 99.67% of days in 2020 did not have a mean equal to that of all years
-* 98.08% of days in 2019 did not have a mean equal to that of all years
-* 99.45% of days in 2018 did not have a mean equal to that of all years
-* 99.73% of days in 2017 did not have a mean equal to that of all years
-* 99.72% of days in 2016 did not have a mean equal to that of all years
-* 98.25% of days in 2015 did not have a mean equal to that of all years
-* 98.47% of days in 2014 did not have a mean equal to that of all years
+* The alpha value used to reject the null hypothesis was 0.05. 
 
-This test told me that it is not unusal for the mean on any given day to be different from the average latitude. A better test might be to see how many days were above or below the calculated 5% and 95% Confidence Interval.
+* Filtering the list for P-Values under 0.05 and summing those numbers of days over total days observed in that year answered the above question.
 
-### Might Try
+```
+99.67% of days in 2020 did not have a mean equal to that of all years
+98.08% of days in 2019 did not have a mean equal to that of all years
+99.45% of days in 2018 did not have a mean equal to that of all years
+99.73% of days in 2017 did not have a mean equal to that of all years
+99.72% of days in 2016 did not have a mean equal to that of all years
+98.25% of days in 2015 did not have a mean equal to that of all years
+98.47% of days in 2014 did not have a mean equal to that of all years
+```
 
-* Fit migration curve
+* This test told me that it is not unusal for the mean on any given day to be different from the average latitude. 
 
-* Look at just migration durations only
 
-* Predit future years 
+## Furture Exploration
 
-    * Need more years
 
-    *Need to look at trend from one year to the next
+
+* Additional tests could be performed to determine how many days were within the 95% Confidence Interval of the combined year means. The test above only compares if means are equal.This would give us a better idea of how many days were 95% likely to not be an average day.
+
+* Filter out non-migrating warblers from the dataset. This would make the average latitudes of migrating warblers more pronounced.
+
+* Since warblers migrate from Canada to South America, it would make sense to pull the same data for all of the countries to get a bigger picture.
+
+* Perform tests on fall migrations.
 
