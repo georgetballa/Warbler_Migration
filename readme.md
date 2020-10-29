@@ -25,7 +25,7 @@ ____________________
 
 Plotted Coordinates Each Day Over a Year
 
-![Warbler Observations 2020](./graphs/5_years_migrations.jpg)
+[![Warbler Observations 2020](./graphs/5_years_migrations.jpg)](./graphs/5_years_migrations.jpg)
 
 
 Fit Regression Line to Each Day
