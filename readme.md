@@ -4,7 +4,7 @@
 
 Why warblers?
 
-Warbler's are sensitive to changes in climate, and have well studied migration patterns. They have very predictable migration patterns. Looking at changes in these patterns can be an indicator for climate change.
+Warbler's are sensitive to changes in climate, and have well studied migration patterns. Looking at changes in these patterns can be an indicator for climate change.
 
 Every Year, warblers migrate from their winter homes in South America to their summer homes in Canada. 
 
