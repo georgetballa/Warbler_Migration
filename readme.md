@@ -86,17 +86,17 @@ Combining all years into one linear regression visualizes an estimation of the e
 __________________
 ## Statistical Testing
 
-**Some of these days look like they are far from the regression line. A statistical test could determine how many days of each year had amean latitude that was equal to the overall latitude.**
+**Some of these days look like they are far from the regression line. A statistical test could determine how many days of each year had a mean latitude that was equal to the overall latitude.**
 
-#### Null Hypothesis: The mean latitude on a given day (Apr-8 2020) is equal to the mean latitude of all observations that day from 2014 to 2020.
+#### Null Hypothesis: The mean latitude on a given day is equal to the mean latitude of all observations that day from 2013 to 2020.
 
 #### Alternative Hypothesis: The mean latitude on that given day is not equal to the mean over years 2013-2020.
 
-* April-8 had a point that looked far from the mean latitude. 
+* April-8 had a point that looked far from the mean latitude so it was an interesting point to observe for the first test. 
 
-* A normal test using scipy stats confirmed that the latitude distribution on April 8th was not a normal distribution so sampling would be needed.
+* A normal test using scipy stats confirmed that the latitude distribution was not a normal distribution so sampling would be needed.
 
-* Bootstrapping 10,000 samples (each of length 50) from April-8 2020 and taking the means of those allowed me to plot a normal distribution of means and calculate the probable means with 95% confidence.
+* Bootstrapping 10,000 samples (each of length 50) from April-8 2020 and taking the means of those resulted in a normal distribution of means. The 95% Confidence Interval was calculated and graphed below.
 
 ![2020 Sampled Means](./graphs/warbler_plots//CLT_2020_8-Apr.jpg)
 
@@ -104,11 +104,11 @@ __________________
 
 ![2020 Sampled Means](./graphs/warbler_plots//CLT_all_years_8-Apr.jpg)
 
-Using the Welch's T-test with the assumption of non-equal variances I was able to determine that the mean latitude on April-8 2020 was not equal to the mean latitude over all years. 
+Using the Welch's T-test with the assumption of non-equal variances determined that the mean latitude on April-8 2020 was not equal to the mean latitude over all years. 
 
 >Ttest_indResult(statistic=536.5253279869985, pvalue=0.0)
 
-The reported P-Value was 0.0. Graphing to two mean distributions shows that both distributions do not overlap, confirming the test results.
+The reported P-Value was 0.0. Graphing to two mean distributions shows that both distributions do not overlap, confirming the test results that there is no probability that the means are the same.
 
 ![2020 VS All Years Mean Distributions](./graphs/warbler_plots//CLT_overlay.jpg)
 
@@ -131,7 +131,7 @@ The reported P-Value was 0.0. Graphing to two mean distributions shows that both
 98.47% of days in 2014 did not have a mean equal to that of all years
 ```
 
-* This test told me that it is not unusal for the mean on any given day to be different from the average latitude. 
+* This test shows that it is not unusal for the mean on any given day to be different from the average latitude. 
 
 _____________________
 ## Future Exploration
