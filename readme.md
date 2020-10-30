@@ -126,13 +126,13 @@ The reported P-Value was 0.0. Graphing to two mean distributions shows that both
 * Filtering the list for P-Values under 0.05 and summing those numbers of days over total days observed in that year answered the above question.
 
 ```
-99.67% of days in 2020 did not have a mean equal to that of all years
-98.08% of days in 2019 did not have a mean equal to that of all years
-99.45% of days in 2018 did not have a mean equal to that of all years
-99.73% of days in 2017 did not have a mean equal to that of all years
-99.72% of days in 2016 did not have a mean equal to that of all years
-98.25% of days in 2015 did not have a mean equal to that of all years
-98.47% of days in 2014 did not have a mean equal to that of all years
+99.67% of days in 2020 did not have the same mean as all years combined
+98.08% of days in 2019 did not have the same mean as all years combined
+99.45% of days in 2018 did not have the same mean as all years combined
+99.73% of days in 2017 did not have the same mean as all years combined
+99.72% of days in 2016 did not have the same mean as all years combined
+98.25% of days in 2015 did not have the same mean as all years combined
+98.47% of days in 2014 did not have the same mean as all years combined
 ```
 
 * This test shows that it is not unusal for the mean on any given day to be different from the average latitude. 
@@ -142,7 +142,7 @@ _____________________
 
 
 
-* Additional tests could be performed to determine how many days were within the 95% Confidence Interval of the combined year means. The test above only compares if means are equal.This would give us a better idea of how many days were 95% likely to not be an average day.
+* Additional tests could be performed to determine how many days were within the 95% Confidence Interval of OLS Regression Line from all years. The test above only compares if means are the same. This would give us a better idea of how many days were 95% likely to not be an average day.
 
 * Filter out non-migrating warblers from the dataset. This would make the average latitudes of migrating warblers more pronounced.
 
