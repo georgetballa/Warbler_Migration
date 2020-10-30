@@ -37,7 +37,7 @@ __________________
 * Is there enough data on warblers?
 
 ![2017 Warblers Vs. Total](./graphs/monthly_distribution/2017_warbler_observations.jpg)
-![2017 Warblers Vs. Total](./graphs/monthly_distribution/2018_warbler_observations.jpg)
+![2018 Warblers Vs. Total](./graphs/monthly_distribution/2018_warbler_observations.jpg)
 
 After filtering I ended up with an average of 12,200 warbler observations per year. This provides me with enough to look at all warblers, but looking at individual species of warbler provide too small of a sample size.
 
@@ -71,7 +71,7 @@ Each point represents the average latitude of warbler observations on a given da
 
 **Plotting Spring Migration**
 
-After focusing in on spring migration from Apr-7 to May-22 of each year I wanted to visualize the slope of each migration with a regression line in to look at differences between years. 
+After focusing in on spring migration from Apr-7 to May-22 of each year I wanted to visualize the slope of each migration with a regression line to look at differences between years. 
 
 2018 and 2020 had the largest difference with migration in 2018 starting at a lower average lattitude, and ending at a higher average latitude.
 
