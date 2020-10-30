@@ -100,7 +100,7 @@ __________________
 
 * A normal test using scipy stats confirmed that the latitude distribution was not a normal distribution so sampling would be needed.
 
-* Bootstrapping 10,000 samples (each of length 50) from April-8 2020 and taking the means of those resulted in a normal distribution of means. The 95% Confidence Interval was calculated and graphed below.
+* Bootstrapping 10,000 samples from April-8 2020 and taking the means of those resulted in a normal distribution of means. The 95% Confidence Interval was calculated and graphed below.
 
 ![2020 Sampled Means](./graphs/warbler_plots//CLT_2020_8-Apr.jpg)
 
