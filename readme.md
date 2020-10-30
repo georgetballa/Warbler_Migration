@@ -90,7 +90,7 @@ Combining all years into one linear regression visualizes an estimation of the e
 __________________
 ## Statistical Testing
 
-**Some of these days look like they are far from the regression line. A statistical test could determine how many days of each year had a mean latitude that was equal to the overall latitude.**
+**Some of these days look like they are far from the mean latitude. A T-test can be used to determine if a given day mean latitude that was the same as the average latitude from 2013-2020.**
 
 #### Null Hypothesis: The mean latitude on a given day is equal to the mean latitude of all observations that day from 2013 to 2020.
 
