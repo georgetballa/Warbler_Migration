@@ -39,7 +39,7 @@ __________________
 ![2017 Warblers Vs. Total](./graphs/monthly_distribution/2017_warbler_observations.jpg)
 ![2018 Warblers Vs. Total](./graphs/monthly_distribution/2018_warbler_observations.jpg)
 
-After filtering I ended up with an average of 12,200 warbler observations per year. This provides me with enough to look at all warblers, but looking at individual species of warbler provide too small of a sample size.
+After filtering I ended up with an average of 12,200 warbler observations per year. This provides me with enough to look at all warblers, but looking at individual species of warbler provides too small of a sample size.
 
 ### Sample of 2019 Warbler Observation Data
 
@@ -83,6 +83,10 @@ Combining all years into one linear regression visualizes an estimation of the e
 
 ![All Years Regressions](./graphs/warbler_plots/all_spring_migrations_fit.jpg)
 
+![OLS Results](./images/OLS)
+
+
+![QQ](./graphs/warbler_plots/regression_qq.jpg)
 __________________
 ## Statistical Testing
 
