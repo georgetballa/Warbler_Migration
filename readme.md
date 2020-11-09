@@ -1,4 +1,4 @@
-# Warbler Migration
+# Warbler Migration EDA
 
 ![Dataframe Example](./images/warbler.gif)
 
